@@ -1598,6 +1598,10 @@ canvas.particles-js-canvas-el {
   margin-top: 1.5rem;
 }
 
+.contact .contact-info .text-muted a {
+  color: #6c757d;
+}
+
 .contact .contact-info i {
   margin-right: 0.5rem;
 }
@@ -2139,7 +2143,7 @@ canvas.particles-js-canvas-el {
     position: inherit;
     transform: translateY(0);
     padding-top: 90px;
-    padding-bottom: 8px;
+    padding-bottom: 100px;
   }
   .post-sidebar-toggle{
     right: 65px;
