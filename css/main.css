@@ -612,12 +612,6 @@ a, button {
   max-width: 450px;
 }
 
-.hero .pill-button i {
-  position: relative;
-  top: 1px;
-  margin-right: 8px;
-}
-
 /*-------------------------
           hero-01
 -------------------------*/
@@ -3164,17 +3158,25 @@ canvas.particles-js-canvas-el {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f3f6;
+  background: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3c3c3c; 
+  background: #3c3c3c;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background:rgba(0, 0, 0, 0.6); 
+.bx-download {
+  position: relative;
+  top: 1px;
+  margin-right: 8px;
+}
+
+.bx-message-dots {
+  position: relative;
+  top: 3px;
+  margin-right: 8px;
 }
