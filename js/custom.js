@@ -1,39 +1,21 @@
-/*-----------------------------------------------------------
-* Template Name    : Arshia | Responsive One Page HTML Template
-* Author           : Retrina Group
-* Version          : 1.0.0
-* Created          : June 2020
-* File Description : Main js file of the template
-*------------------------------------------------------------
-*/
-
-// repeated variables
 var $window = $(window);
-var $root = $('html, body');
+var $root   = $('html, body');
 
-$(document).ready(function () {
-
+$(document).ready(function ()
+{
     "use strict";
     
-    themeOption();
     navbarToggler();
     smoothScroll();
     bgBackground();
     colorFull();
     borderColor();
-    ColorPallet();
     swiperSlider();
-    sliderOwlCarousel();
-    typedJS();
-    portfolioPopup();
-    clientCarousel();
-    postSidebar();
-    mapInit();
     submitForm();
-
 });
 
-$window.on("load", (function() {
+$window.on("load", (function()
+{
     $("#overlayer").delay(500).fadeOut('slow');
     $(".loader").delay(1000).fadeOut('slow');
     portfolioIsotop();
@@ -41,78 +23,26 @@ $window.on("load", (function() {
     ChangeColor();
     scrollToAnchor();
 }));
-$window.on('scroll', function () {
-    returnToTop();
+
+$window.on('scroll', function ()
+{
     headerSticky();
-    ChangeColor();
-    skills();
 });
 
 /*-----------------------------------------------------------------------------
                                    FUNCTIONS
 -----------------------------------------------------------------------------*/
 
-
-/*-------------------------
-        Theme Option
--------------------------*/
-function themeOption(){
-
-    "use strict";
-
-    $('.color-scheme li .dark-scheme').click(function() {
-        $("body").addClass('arshia-dark');
-        $('.color-scheme li a').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    $('.color-scheme li .light-scheme').click(function() {
-        $("body").removeClass('arshia-dark');
-        $('.color-scheme li a').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    $('.theme-skin li .flat-skin').click(function() {
-        $("body").addClass('flat-demo');
-        $('.theme-skin li a').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    $('.theme-skin li .neo-skin').click(function() {
-        $("body").removeClass('flat-demo');
-        $('.theme-skin li a').removeClass('active');
-        $(this).addClass('active');
-    });
-}
-
-/*--------------------------
-       RETURN TO TOP
---------------------------*/
-function returnToTop() {
-
-    "use strict";
-
-    var $returnToTop = $('.return-to-top');
-    if ($window.scrollTop() > 150) {
-        $returnToTop.addClass('show');
-    } else {
-        $returnToTop.removeClass('show');
-    }
-    $returnToTop.click(function () {
-        $root.stop().animate({
-            scrollTop: 0
-        }, 1500);
-    });
-}
-
 /*--------------------------
        NAVBAR TOGGLER
 --------------------------*/
+
 function navbarToggler(){
 
     "use strict";
 
-    $('.navbar-toggler').on('click', function(){
+    $('.navbar-toggler').on('click', function()
+    {
         $('header').toggleClass('z-index');
         $('.post-sidebar-toggle').toggleClass('d-none');
     })
@@ -168,22 +98,7 @@ function headerSticky(){
     }
 }
 
-/*-------------------------
-        ChangeColor
--------------------------*/
-function ChangeColor(){
 
-    "use strict";
-
-    // var top1 = $('#hero').offset().top;
-    // var top2 = $('#about').offset().top;
-
-    if ($window.width() > 991 && $window.scrollTop() < 100) {
-        $('.special-section').css('color', '#fff');
-      } else {
-        $('.special-section').css('color', '#1a1a1a');
-      }  
-}
 
 /*-------------------------
         ColorFull Demo
@@ -224,46 +139,6 @@ function borderColor() {
     }
 }
    
-    
-// -------------------------------------------------------------
-//   Color Panel
-// -------------------------------------------------------------
-function ColorPallet() {
-
-    "use strict";
-
-    $("ul.pattern .color1").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/green-color.css"), !1
-    });
-    $("ul.pattern .color2").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/yellow-color.css"), !1
-    });
-    $("ul.pattern .color3").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/golden-color.css"), !1
-    });
-    $("ul.pattern .color4").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/sky-blue-color.css"), !1
-    });
-    $("ul.pattern .color5").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/blue-color.css"), !1
-    });
-    $("ul.pattern .color6").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/purple-color.css"), !1
-    });
-    $("ul.pattern .color7").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/orange-color.css"), !1
-    });
-    $("ul.pattern .color8").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/pink-color.css"), !1
-    });
-    $("ul.pattern .color9").click(function () {
-        return $("#option-color").attr("href", "assets/css/color/red-color.css"), !1
-    });
-    $("#color-switcher .pallet-button").click(function () {
-        return $("#color-switcher .color-pallet").toggleClass('show'), !1
-    })
-
-}
 /*-----------------------------
      HERO SWIPER SLIDER
 ------------------------------*/
@@ -308,72 +183,7 @@ function swiperSlider(){
         $fullscreen.css("height", $window.height());
     }
 }
-/*-----------------------------
-      SLIDER OWL CAROUSEL
-------------------------------*/
-function sliderOwlCarousel(){
-    "use strict";
 
-    $('.hero .owl-carousel').owlCarousel({
-        loop:true,
-        items: 1,
-        nav: false,
-        dots: false,
-        autoplay:true,
-        touchDrag: true,
-        smartSpeed: 5000,
-        animateOut: 'fadeOut',
-        autoplayHoverPause: true,
-    });
-    $('#hero-slider').on("translate.owl.carousel", function(){
-        setTimeout(function(){
-            $('.hero-slide').removeClass("zoom");
-        }, 1000)
-    });
-    $('#hero-slider').on("translated.owl.carousel", function(){
-        $('.owl-item.active .hero-slide').addClass("zoom");
-    });
-}
-
-/*-------------------------
-        TYPED JS
--------------------------*/
-function typedJS() {
-
-    "use strict";
-    
-    if ($('.element').length > 0) {
-        var options = {
-            strings: $(".element").attr('data-elements').split(','),
-            typeSpeed: 100,
-            backDelay: 3000,
-            backSpeed: 50,
-            loop: true
-        };
-        var typed = new Typed(".element", options);
-    }
-}
-/*-------------------------
-          Skills
--------------------------*/
-function skills() {
-
-    "use strict";
-
-    var scroll = $window.scrollTop();
-    var skillsDiv = $('#skills');
-    if(skillsDiv.length > 0){
-        var winH = $window.height(),
-            skillsT = skillsDiv.offset().top;
-        if (scroll + winH > skillsT) {
-            $('.skillbar').each(function () {
-                $(this).find('.skillbar-bar').animate({
-                    width: $(this).attr('data-percent')
-                }, 6000);
-            });
-        }
-    }
-}
 
 /*-------------------------
         ISOTOPE JS
@@ -462,217 +272,6 @@ function portfolioIsotop() {
         showNextItems(next_items);
     });
 hideItems(initial_items);
-}
-
-/*-------------------------
-     MAGNIFIC POPUP JS
--------------------------*/
-function portfolioPopup() {
-
-    "use strict";
-
-    if (('.portfolio-items').length > 0) {
-        $('.portfolio-items').each(function() {
-            $(this).magnificPopup({
-                delegate: '.js-zoom-gallery',
-                type: 'image',
-                gallery: {
-                    enabled:true
-                }
-            });
-        });
-    }
-}
-
-/*-------------------------
-  Testimonial CAROUSEL JS
--------------------------*/
-function clientCarousel() {
-    $(".testimonial .owl-carousel").owlCarousel({
-        loop: true,
-        margin: 30,
-        stagePadding: 5,
-        nav: false,
-        autoplay: false,
-        dots: true,
-        mouseDrag: true,
-        touchDrag: true,
-        smartSpeed: 700,
-        autoplayHoverPause: false,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: false
-            },
-            992: {
-                items: 2,
-                nav: false,
-            },
-
-        }
-    });
-}
-
-/*-------------------------
-    POST SIDEBAR TOGGLER
--------------------------*/
-function postSidebar(){
-    $('.post-sidebar-toggle').on('click', function(){
-        $(this).toggleClass('open');
-        $('.post-sidebar').toggleClass('open');
-    })
-}
-
-/*-------------------------
-          GOOGLE Map
--------------------------*/
-  function mapInit() {
-
-    "use strict";
-    var myMap = $('#my-map');
-
-    if(myMap.length){
-        var lat = myMap.data("location-lat");
-        var lng = myMap.data("location-lng");
-        var options = {
-            center: new google.maps.LatLng(lat, lng),
-            zoom: 7,
-            mapTypeControl: true,
-            gestureHandling: 'cooperative',
-            panControl: false,
-            zoomControl: true,
-            zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.DEFAULT,
-                position: google.maps.ControlPosition.TOP_LEFT
-            },
-            scaleControl: false,
-            styles: [{
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#576ee9"
-                }, {
-                    "lightness": 17
-                }]
-            }, {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#f5f5f5"
-                }, {
-                    "lightness": 20
-                }]
-            }, {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                    "color": "#ffffff"
-                }, {
-                    "lightness": 17
-                }]
-            }, {
-                "featureType": "road.highway",
-                "elementType": "geometry.stroke",
-                "stylers": [{
-                    "color": "#ffffff"
-                }, {
-                    "lightness": 29
-                }, {
-                    "weight": 0.2
-                }]
-            }, {
-                "featureType": "road.arterial",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#ffffff"
-                }, {
-                    "lightness": 18
-                }]
-            }, {
-                "featureType": "road.local",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#ffffff"
-                }, {
-                    "lightness": 18
-                }]
-            }, {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#f5f5f5"
-                }, {
-                    "lightness": 21
-                }]
-            }, {
-                "featureType": "poi.park",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#d5d5d5"
-                }, {
-                    "lightness": 21
-                }]
-            }, {
-                "elementType": "labels.text.stroke",
-                "stylers": [{
-                    "visibility": "on"
-                }, {
-                    "color": "#f8f8f8"
-                }, {
-                    "lightness": 25
-                }]
-            }, {
-                "elementType": "labels.text.fill",
-                "stylers": [{
-                    "saturation": 36
-                }, {
-                    "color": "#222222"
-                }, {
-                    "lightness": 30
-                }]
-            }, {
-                "elementType": "labels.icon",
-                "stylers": [{
-                    "visibility": "off"
-                }]
-            }, {
-                "featureType": "transit",
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#f5f5f5"
-                }, {
-                    "lightness": 19
-                }]
-            }, {
-                "featureType": "administrative",
-                "elementType": "geometry.fill",
-                "stylers": [{
-                    "color": "#fefefe"
-                }, {
-                    "lightness": 10
-                }]
-            }, {
-                "featureType": "administrative",
-                "elementType": "geometry.stroke",
-                "stylers": [{
-                    "color": "#fefefe"
-                }, {
-                    "lightness": 17
-                }, {
-                    "weight": 1.2
-                }]
-            }],
-        };
-        var map = new google.maps.Map(document.getElementById('my-map'), options);
-        var marker1 = new google.maps.Marker({
-            position: map.getCenter(),
-            title: $('title').text(),
-            icon: myMap.data("location-icon"),
-            animation: google.maps.Animation.BOUNCE
-        });
-        marker1.setMap(map);
-    }
 }
 
 function submitForm()
