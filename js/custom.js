@@ -302,17 +302,12 @@ function submitForm()
 
 $(function ()
 {
-    $('#myDiv').floatingWhatsApp(
+    $('#wpBtn').floatingWhatsApp(
     {
-        phone: '+994773339800',
-        popupMessage: 'Hello, how can i help you ?',
-        message: "I'd like to order a pizza",
-        showPopup: true,
-        showOnIE: false,
-        headerTitle: 'Welcome!',
-        headerColor: '#000',
-        backgroundColor: '#000',
-        position: 'right',
-        size: '50px'
+        popupMessage: 'Hi , how can I help you ?',
+        headerTitle: 'Welcome !',
+        backgroundColor: 'transparent',
     });
+
+    $('#wpBtn textarea').attr('rows', 4);
 });

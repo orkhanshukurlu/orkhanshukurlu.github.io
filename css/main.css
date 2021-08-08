@@ -3147,3 +3147,7 @@ canvas.particles-js-canvas-el {
   top: 3px;
   margin-right: 8px;
 }
+
+.wpBtn img {
+  width: 50px;
+}
