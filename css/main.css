@@ -382,7 +382,7 @@ a, button {
     text-align: left !important;
   }
   .services .services-content{
-    padding-left: 0;
+    padding-left: 0 !important;
   }
 }
 
@@ -3134,11 +3134,11 @@ canvas.particles-js-canvas-el {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 ::-webkit-scrollbar-thumb {
