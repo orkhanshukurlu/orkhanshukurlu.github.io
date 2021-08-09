@@ -375,6 +375,15 @@ a, button {
   header.z-index{
     z-index: 1033;
   }
+  .copy-right p{
+    text-align: left;
+  }
+  .services-item{
+    text-align: left !important;
+  }
+  .services .services-content{
+    padding-left: 0;
+  }
 }
 
 /*-------------------------
