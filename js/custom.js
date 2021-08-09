@@ -305,7 +305,6 @@ $(function ()
     $('#wpBtn').floatingWhatsApp(
     {
         popupMessage: 'Hi , how can I help you ?',
-        headerTitle: 'Welcome !',
         backgroundColor: 'transparent',
     });
 
